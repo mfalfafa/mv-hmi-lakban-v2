@@ -1,0 +1,138 @@
+body {
+	background-color: #f1f1f1;
+}
+#app {
+	padding: 15px;
+}
+ul.custom li {
+	border-bottom: 1px dashed #ccc;
+	font-size: 14px;
+}
+table.custom {
+	background-color: #fff;
+	box-shadow: 0px 5px 14px #ccc;
+	max-height: 200px;
+}
+table.custom thead {}
+table.custom thead tr {}
+table.custom thead tr th {
+	background-color: #4161d8;
+	color: #fff;
+	text-align: center;
+	font-size: 24px;
+}
+table.custom thead tr th:first-child {
+	border-radius: 10px 0 0 0;
+}
+table.custom thead tr th:last-child {
+	border-radius: 0 10px 0 0;
+}
+table.custom tbody {}
+table.custom tbody tr {}
+table.custom tbody tr td {}
+table.custom tbody tr td.left-border {
+	border-left: 1px solid #4161d8;
+}
+.fix-height {
+	height: 280px;
+    overflow-y: scroll;
+}
+.active-machine {
+	color: #fff;
+	background-color: #007bff;
+}
+.brand-logo {
+    height: 80px;
+    width: 80px;
+    background-image: url('mv-logo.png');
+    background-position: center center;
+    background-size: 80px;
+    background-repeat: no-repeat;
+}
+.form-signin {
+	background-color: #4161d8;
+	color: #fff;
+}
+.form-signin .form-group {
+	padding: 0 30px;
+}
+.form-signin .form-group label {
+	font-size: 12px;
+}
+.form-signin h1 {
+	padding-top: 15px;
+}
+.form-signin input {
+	border-radius: 0px;
+}
+.form-signin button {
+	border-radius: 0px;
+    font-size: 22px;
+    color: #fff;
+    letter-spacing: 2px;
+    padding: 10px 0;
+}
+.form-configuration {
+	background-color: #fff;
+	padding: 10px;
+}
+.form-configuration input,
+.form-configuration button {
+	border-radius: 0;
+}
+.custom-alert {
+	background-color: #4161d8;
+	color: #fff;
+	font-size: 1.6rem;
+	padding: 0.5rem;
+	box-shadow: 0px 2px 13px #a1a1a1;
+}
+.alert-white {
+	background-color: #fff;
+	color: #4161d8;
+    padding: 0.3rem;
+    border-color: #4161d8;
+    border-radius: 0;
+}
+button[class*="btn-outline-"] {
+	background-color: #fff;
+	border-radius: 0px;
+	font-size: 2rem;
+    padding: 0.1rem;
+}
+button.btn-outline-secondary {
+	background-color: #f1f1f1;
+	color: red;
+}
+button.btn-outline-secondary.active {
+	background-color: #fff !important;
+	color: #000 !important;
+	box-shadow: 0px 0px 15px #ccc;
+}
+button.btn-outline-secondary:hover {
+	background-color: #f1f1f1;
+	color: red;
+}
+.btn-rework {
+	background-color: red;
+    color: #fff;
+    font-size: 3rem;
+    line-height: 1.1;
+    text-align: center;
+    width: calc(100% - 30px);
+    position: absolute;
+    font-weight: bold;
+	padding: 20px 0;
+	cursor: pointer;
+	text-decoration: none;
+}
+.btn-rework:hover, .btn-rework:visited {
+	text-decoration: none;
+	color: #fff;
+}
+
+@media (min-width: 576px) {
+	.container {
+		max-width: unset;
+	}
+}

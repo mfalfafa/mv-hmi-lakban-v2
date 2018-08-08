@@ -119,21 +119,21 @@ export default {
     .vnis button.vnis__button:first-child {
         width: 0; 
         height: 0; 
-        border-top: 45px solid transparent;
-        border-bottom: 45px solid transparent;
-        border-right:45px solid #fff; 
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-right:20px solid #fff; 
     }
     .vnis button.vnis__button:last-child {
         width: 0; 
         height: 0; 
-        border-top: 45px solid transparent;
-        border-bottom: 45px solid transparent;
-        border-left: 45px solid #fff;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid #fff;
     }
     .vnis input {
-        font-size: 3rem !important;
+        font-size: 5rem !important;
         border: none !important;
-        height: 3rem !important;
+        height: 5rem !important;
         width: 5rem !important;
         background: none;
     }

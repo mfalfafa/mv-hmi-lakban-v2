@@ -172,10 +172,22 @@ export default {
 
         function connect_(){
           // Server IP and Port configuration
-          client.connect(5000, '192.168.10.250', function() {
-            console.log('Connected');
-            f=1;
-          });
+          f=0;
+          while(1){
+            try{
+                client.connect(5000, '192.168.10.250', function() {
+                    console.log('Connected');
+                    f=1;
+                });
+            }catch(err){
+                console.log("Can't connect to server!");
+            }
+            if(f==1){
+                break;
+            }
+            // Delay
+            setTimeout(function(){}, 500); 
+          }
         }
 
         // Send data every second
@@ -186,7 +198,14 @@ export default {
                for (var k in lines_) {
                     all_data=all_data + '@'+ lines_[k].label.toString() +'@'+ lines_[k].counter.toString() + '@' 
                 }
-               client.write(all_data);
+                try{
+                    client.write(all_data);
+                }catch(err){
+                    // If error while sending a data or disconnected from server
+                    console.log("Error while sending datalakban!");
+                    // Trying to reconnect
+                    connect_();
+                }
           }
         }, 1000);
 

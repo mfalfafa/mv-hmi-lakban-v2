@@ -186,7 +186,7 @@ export default {
                 break;
             }
             // Delay
-            setTimeout(function(){}, 500); 
+            // setTimeout(function(){}, 500); 
           }
         }
 

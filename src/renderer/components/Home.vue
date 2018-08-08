@@ -158,6 +158,50 @@ export default {
         reloadPage: function(){
             location.reload();
         }
+    },
+    beforeMount(){
+        // For sending data every second through socket protocolSSSSSS
+        var net = require('net');
+
+        var client = new net.Socket();
+        // for Ready flag
+        var f=0; 
+
+        function connect_(){
+          // Server IP and Port configuration
+          client.connect(5000, '192.168.10.250', function() {
+            console.log('Connected');
+            f=1;
+          });
+        }
+
+        // Send data every second
+        setInterval(function send_(){
+          if(f==1){
+               // console.log(lines_);
+               var all_data=''
+               for (var k in lines_) {
+                    all_data=all_data + '@'+ lines_[k].label.toString() +'@'+ lines_[k].counter.toString() + '@' 
+                }
+               client.write(all_data);
+          }
+        }, 1000);
+
+        connect_();
+
+        client.on('data', function(data) {
+          console.log('Received: ' + data);
+          if(data=='ack'){
+            client.write('ok')
+            client.destroy(); // kill client after server's response
+          }
+        });
+
+        client.on('close', function() {
+          console.log('Connection closed');
+          f=0;
+          connect_();
+        });
     }
 }
 </script>

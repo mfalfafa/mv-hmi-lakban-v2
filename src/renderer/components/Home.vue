@@ -79,6 +79,7 @@ import NumberInputSpinner from 'vue-number-input-spinner';
 
 var defaultBtnActive = 0;
 var lines_=0;
+
 export default {
     name: 'home',
     data: () => ({
@@ -248,22 +249,22 @@ export default {
 .vnis button.vnis__button:first-child {
     width: 0; 
     height: 0; 
-    border-top: 30px solid transparent;
-    border-bottom: 30px solid transparent;
-    border-right:30px solid #fff; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right:20px solid #fff; 
 }
 .vnis button.vnis__button:last-child {
     width: 0; 
     height: 0; 
-    border-top: 30px solid transparent;
-    border-bottom: 30px solid transparent;
-    border-left: 30px solid #fff;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #fff;
 }
 .vnis input {
-    font-size: 7rem !important;
+    font-size: 5rem !important;
     border: none !important;
-    height: 6rem !important;
-    width: 8rem !important;
+    height: 5rem !important;
+    width: 6rem !important;
     background: none;
 }
 </style>

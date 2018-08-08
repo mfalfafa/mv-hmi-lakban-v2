@@ -234,7 +234,7 @@ export default {
 
 .vnis {
     height: 3rem;
-    margin: 25px 0;
+    margin: 20px 0;
 }
 .vnis button.vnis__button {
     margin-top: 15px;

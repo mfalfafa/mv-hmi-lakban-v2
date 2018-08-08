@@ -78,8 +78,6 @@ import devices from '@/assets/json/devices.json';
 import NumberInputSpinner from 'vue-number-input-spinner';
 
 var defaultBtnActive = 0;
-var lines_=0;
-
 export default {
     name: 'home',
     data: () => ({
@@ -97,11 +95,10 @@ export default {
     created(){
         var hmi = this;
         var lines = hmi.lines;
-        lines_=lines;
         
-        // setInterval(function(){
-        //     hmi.sendSocket(lines);
-        // }, 1000);
+        setInterval(function(){
+            hmi.sendSocket(lines);
+        }, 1000);
 
         //defaultBtnActive = 0;
         // if (this.$route.params.lineId) {
@@ -142,9 +139,9 @@ export default {
             this.btnActive = defaultBtnActive;
             this.lineSelectedLabel = e.label;
         },
-        // sendSocket(data){
-        //     this.$socket.emit('datalakban', data);
-        // },
+        sendSocket(data){
+            this.$socket.emit('datalakban', data);
+        },
         submitRework(){
             var lines = devices.lines;
             for (var k in lines) {
@@ -161,50 +158,6 @@ export default {
         reloadPage: function(){
             location.reload();
         }
-    },
-    beforeMount(){
-        // For sending data every second through socket protocolSSSSSS
-        var net = require('net');
-
-        var client = new net.Socket();
-        // for Ready flag
-        var f=0; 
-
-        function connect_(){
-          // Server IP and Port configuration
-          client.connect(5000, '192.168.10.250', function() {
-            console.log('Connected');
-            f=1;
-          });
-        }
-
-        // Send data every second
-        setInterval(function send_(){
-          if(f==1){
-               // console.log(lines_);
-               var all_data=''
-               for (var k in lines_) {
-                    all_data=all_data + '@'+ lines_[k].label.toString() +'@'+ lines_[k].counter.toString() + '@' 
-                }
-               client.write(all_data);
-          }
-        }, 1000);
-
-        connect_();
-
-        client.on('data', function(data) {
-          console.log('Received: ' + data);
-          if(data=='ack'){
-            client.write('ok')
-            client.destroy(); // kill client after server's response
-          }
-        });
-
-        client.on('close', function() {
-          console.log('Connection closed');
-          f=0;
-          connect_();
-        });
     }
 }
 </script>

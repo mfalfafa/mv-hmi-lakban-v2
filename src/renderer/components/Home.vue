@@ -96,9 +96,9 @@ export default {
         var hmi = this;
         var lines = hmi.lines;
         
-        setInterval(function(){
-            hmi.sendSocket(lines);
-        }, 1000);
+        // setInterval(function(){
+        //     hmi.sendSocket(lines);
+        // }, 1000);
 
         //defaultBtnActive = 0;
         // if (this.$route.params.lineId) {
@@ -139,9 +139,9 @@ export default {
             this.btnActive = defaultBtnActive;
             this.lineSelectedLabel = e.label;
         },
-        sendSocket(data){
-            this.$socket.emit('datalakban', data);
-        },
+        // sendSocket(data){
+        //     this.$socket.emit('datalakban', data);
+        // },
         submitRework(){
             var lines = devices.lines;
             for (var k in lines) {

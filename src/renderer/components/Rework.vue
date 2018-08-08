@@ -108,7 +108,7 @@ export default {
         margin: 20px 0;
     }
     .vnis button.vnis__button {
-        margin-top: 10px;
+        margin-top: 20px;
         background: none;
         text-indent: -9999px;
     }

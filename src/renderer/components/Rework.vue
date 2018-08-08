@@ -77,7 +77,7 @@ export default {
     .bg-blue {
         background-color: #4161d8;
         color: #fff; 
-        min-height: 400px;
+        min-height: 200px;
     }
     header {
         position: relative;
@@ -104,11 +104,11 @@ export default {
     .big-form label,
     .big-form input {}
     .vnis {
-        height: 7rem;
-        margin: 25px 0;
+        height: 5rem;
+        margin: 20px 0;
     }
     .vnis button.vnis__button {
-        margin-top: 15px;
+        margin-top: 10px;
         background: none;
         text-indent: -9999px;
     }
@@ -131,10 +131,10 @@ export default {
         border-left: 45px solid #fff;
     }
     .vnis input {
-        font-size: 10rem !important;
+        font-size: 7rem !important;
         border: none !important;
-        height: 8rem !important;
-        width: 13rem !important;
+        height: 5rem !important;
+        width: 7rem !important;
         background: none;
     }
     footer {

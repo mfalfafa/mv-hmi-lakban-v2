@@ -105,7 +105,7 @@ export default {
     .big-form input {}
     .vnis {
         height: 5rem;
-        margin: 45px 0;
+        margin: 55px 0;
     }
     .vnis button.vnis__button {
         margin-top: 10px;
@@ -131,10 +131,10 @@ export default {
         border-left: 45px solid #fff;
     }
     .vnis input {
-        font-size: 7rem !important;
+        font-size: 3rem !important;
         border: none !important;
-        height: 5rem !important;
-        width: 7rem !important;
+        height: 3rem !important;
+        width: 5rem !important;
         background: none;
     }
     footer {

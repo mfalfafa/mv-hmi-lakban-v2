@@ -234,7 +234,7 @@ export default {
 }
 
 .vnis {
-    height: 7rem;
+    height: 4rem;
     margin: 25px 0;
 }
 .vnis button.vnis__button {
@@ -261,9 +261,9 @@ export default {
     border-left: 20px solid #fff;
 }
 .vnis input {
-    font-size: 5rem !important;
+    font-size: 3rem !important;
     border: none !important;
-    height: 5rem !important;
+    height: 3rem !important;
     width: 6rem !important;
     background: none;
 }

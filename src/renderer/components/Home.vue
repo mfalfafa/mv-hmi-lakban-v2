@@ -79,6 +79,7 @@ import NumberInputSpinner from 'vue-number-input-spinner';
 
 var defaultBtnActive = 0;
 var lines_=0;
+
 export default {
     name: 'home',
     data: () => ({

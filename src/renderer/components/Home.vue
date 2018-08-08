@@ -78,6 +78,7 @@ import devices from '@/assets/json/devices.json';
 import NumberInputSpinner from 'vue-number-input-spinner';
 
 var defaultBtnActive = 0;
+var lines_=0;
 export default {
     name: 'home',
     data: () => ({
@@ -95,6 +96,7 @@ export default {
     created(){
         var hmi = this;
         var lines = hmi.lines;
+        lines_=lines;
         
         // setInterval(function(){
         //     hmi.sendSocket(lines);
@@ -231,7 +233,7 @@ export default {
 }
 
 .vnis {
-    height: 7rem;
+    height: 3rem;
     margin: 25px 0;
 }
 .vnis button.vnis__button {

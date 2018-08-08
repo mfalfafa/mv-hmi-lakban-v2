@@ -134,7 +134,7 @@ export default {
         font-size: 5rem !important;
         border: none !important;
         height: 5rem !important;
-        width: 5rem !important;
+        width: 10rem !important;
         background: none;
     }
     footer {

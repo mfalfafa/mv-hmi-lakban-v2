@@ -95,7 +95,7 @@ export default {
         font-weight: bold;
     }
     .big-form {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: lighter;
     }
     .big-form label {
@@ -105,7 +105,7 @@ export default {
     .big-form input {}
     .vnis {
         height: 5rem;
-        margin: 35px 0;
+        margin: 45px 0;
     }
     .vnis button.vnis__button {
         margin-top: 10px;

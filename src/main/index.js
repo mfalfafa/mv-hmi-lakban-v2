@@ -32,9 +32,9 @@ function createWindow () {
   })
 
   if (process.env.NODE_ENV == 'development') {
-    setInterval(function(){
-      mainWindow.webContents.send('sendlakban',{counter:1})
-    },2000)
+    // setInterval(function(){
+    //   mainWindow.webContents.send('sendlakban',{counter:1})
+    // },2000)
   }
 }
 

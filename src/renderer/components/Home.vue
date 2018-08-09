@@ -218,6 +218,12 @@ export default {
             }, 1000);
         }
 
+        client.on('error', function(err){
+            console.log('There is an error in net socket!');
+            console.log(err.toString());
+            client.destroy();
+        });
+
         client.on('data', function(data) {
           console.log('Received: ' + data);
           if(data=='ack'){

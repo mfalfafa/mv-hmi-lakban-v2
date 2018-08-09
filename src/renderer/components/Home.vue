@@ -169,7 +169,7 @@ export default {
 
         var client = new net.Socket();
         // client.setTimeout(1000);
-        
+
         // for Ready flag
         var f=0; 
 
@@ -212,11 +212,10 @@ export default {
                     console.log("Error while sending datalakban!");
                     client.destroy();
                     // Trying to reconnect
-                    connect_();
+                    // connect_();
                 }
             }, 1000);
         }
-
 
         client.on('data', function(data) {
           console.log('Received: ' + data);
@@ -233,7 +232,7 @@ export default {
 
         client.on('timeout', function(){
             console.log('Client timeout!');
-            // client.destroy();
+            client.destroy();
         });
 
         client.on('close', function() {

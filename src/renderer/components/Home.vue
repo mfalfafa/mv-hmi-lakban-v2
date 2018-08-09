@@ -168,7 +168,7 @@ export default {
         var net = require('net');
 
         var client = new net.Socket();
-        client.setTimeout(3000);
+        client.setTimeout(2000);
 
         // for Ready flag
         var f=0; 
@@ -184,6 +184,7 @@ export default {
                 }catch(err){
                     console.log("Can't connect to server!");
                     client.destroy();
+                    f=0;
                 }
             }
         }
@@ -212,6 +213,7 @@ export default {
                     // If error while sending a data or disconnected from server
                     console.log("Error while sending datalakban!");
                     client.destroy();
+                    f=0;
                     // Trying to reconnect
                     // connect_();
                 }
@@ -222,6 +224,7 @@ export default {
             console.log('There is an error in net socket!');
             console.log(err.toString());
             client.destroy();
+            f=0;
         });
 
         client.on('data', function(data) {
@@ -234,12 +237,13 @@ export default {
                 console.log("Error in writing ack!");
                 client.destroy();
             }
+            f=0;
           }
         });
 
         client.on('timeout', function(){
             console.log('Client timeout!');
-            // client.destroy();
+            client.destroy();
         });
 
         client.on('close', function() {

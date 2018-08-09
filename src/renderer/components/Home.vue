@@ -225,6 +225,7 @@ export default {
         }, 1000);
 
         // Add timeout if there is no live connection
+        // Auto close the connection if there is no ack until n times
         n++;
         if(n>=3){
             console.log("Timeout is achieved!");

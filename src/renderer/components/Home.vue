@@ -80,6 +80,7 @@ import NumberInputSpinner from 'vue-number-input-spinner';
 var defaultBtnActive = 0;
 var lines_=0;
 var first_run=0;
+var n=0;
 
 export default {
     name: 'home',
@@ -230,12 +231,21 @@ export default {
             f=0;
         });
 
-        // Add timeout if there is 
+        // Add timeout if there is no live connection
+        n++;
+        if(n>=1000000){
+            n=0;
+            //Close the connection
+            client.destroy();
+        }
+
         client.on('data', function(data) {
           console.log('Received: ' + data);
           if(data=='ack'){
             try{
+                // Succesfull close the connection
                 client.write('ok')
+                n=0;
                 client.destroy(); // kill client after server's response
             }catch(err){
                 console.log("Error in writing ack!");

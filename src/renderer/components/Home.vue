@@ -217,6 +217,8 @@ export default {
                     // Trying to reconnect
                     // connect_();
                 }
+            }else if(f==0){
+                console.log("Client is not connected!!!");
             }
         }, 1000);
 
@@ -227,6 +229,7 @@ export default {
             f=0;
         });
 
+        // Add timeout if there is 
         client.on('data', function(data) {
           console.log('Received: ' + data);
           if(data=='ack'){

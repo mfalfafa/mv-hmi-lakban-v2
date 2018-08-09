@@ -168,7 +168,7 @@ export default {
         var net = require('net');
 
         var client = new net.Socket();
-        client.setTimeout(1000);
+        // client.setTimeout(1000);
         
         // for Ready flag
         var f=0; 
@@ -233,7 +233,7 @@ export default {
 
         client.on('timeout', function(){
             console.log('Client timeout!');
-            client.destroy();
+            // client.destroy();
         });
 
         client.on('close', function() {

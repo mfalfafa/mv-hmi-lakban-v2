@@ -1,6 +1,7 @@
 # mv-hmi-lakban-v2
 
 > An electron-vue project
+
 **mv-hmi-lakban-v2** is an HMI for Raspi 3 that is more reliable than v1 (**mv-hmi-lakban**).
 This is an electron-vue project to is supposed to make HMI (Human Machine Interface) for Raspberry 3. This HMI will count the goods that passed through the Photo sensor that is attached on Raspi 3 pin GPIO25. The value or data from counter will be sent to PC Server every 1 second through Socket protocol. So this project is integrating electron-vue with Socket (net) and GPIO (onoff) Node module.
 

@@ -220,6 +220,7 @@ export default {
                 }
             }else if(f==0){
                 console.log("Client is not connected!!!");
+                connect_();
                 client.destroy();
             }
         }, 1000);

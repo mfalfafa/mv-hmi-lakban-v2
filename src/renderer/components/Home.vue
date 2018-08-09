@@ -168,7 +168,7 @@ export default {
         var net = require('net');
 
         var client = new net.Socket();
-        // client.setTimeout(1000);
+        client.setTimeout(3000);
 
         // for Ready flag
         var f=0; 

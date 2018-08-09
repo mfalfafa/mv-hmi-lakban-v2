@@ -20,7 +20,7 @@ npm run build
 
 ```
 
-> Settings in Raspi 3
+> **Settings in Raspi 3**
 - To make faster in booting
 	1. Setting in **"/etc/network/interfaces"** to like this :
 	   **"allow-hotplug eth0"**

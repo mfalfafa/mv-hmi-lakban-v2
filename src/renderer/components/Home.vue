@@ -79,6 +79,7 @@ import NumberInputSpinner from 'vue-number-input-spinner';
 
 var defaultBtnActive = 0;
 var lines_=0;
+var first_run=0;
 
 export default {
     name: 'home',
@@ -181,6 +182,7 @@ export default {
                 });
             }catch(err){
                 console.log("Can't connect to server!");
+                client.destroy();
             }
             // if(f==1){
             //     break;
@@ -203,19 +205,28 @@ export default {
                 }catch(err){
                     // If error while sending a data or disconnected from server
                     console.log("Error while sending datalakban!");
+                    client.destroy();
                     // Trying to reconnect
                     connect_();
                 }
           }
         }, 1000);
 
-        connect_();
+        if(first_run==0){
+            connect_();
+            first_run=1;
+        }
 
         client.on('data', function(data) {
           console.log('Received: ' + data);
           if(data=='ack'){
-            client.write('ok')
-            client.destroy(); // kill client after server's response
+            try{
+                client.write('ok')
+                client.destroy(); // kill client after server's response
+            }catch(err){
+                console.log("Error in writing ack!");
+                client.destroy();
+            }
           }
         });
 

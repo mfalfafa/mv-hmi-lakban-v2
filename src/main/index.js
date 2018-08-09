@@ -86,8 +86,12 @@ interrupt_pin.watch(function (err, value) {
     // val=val+1;
     // console.log('Data ' + value);
     // val=val+value;
-    mainWindow.webContents.send('sendlakban',{counter:1});
-    console.log('Data is received.');
+    try{
+      mainWindow.webContents.send('sendlakban',{counter:1});
+      console.log('Data is received.');
+    }catch(err){
+      console.log("Error in receiving data!");
+    }
     // console.log('count '+ val);
     // To stop watch to the sensor pin
     // interrupt_pin.unexport(); // Unexport GPIO and free resources

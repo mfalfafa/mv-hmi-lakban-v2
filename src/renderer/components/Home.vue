@@ -226,7 +226,8 @@ export default {
 
         // Add timeout if there is no live connection
         n++;
-        if(n>=5){
+        if(n>=3){
+            console.log("Timeout is achieved!");
             n=0;
             //Close the connection
             client.destroy();

@@ -175,15 +175,16 @@ export default {
 
         function connect_(){
             // Server IP and Port configuration
-            f=0;
-            try{
-                client.connect(5000, '192.168.10.250', function() {
-                    console.log('Connected');
-                    f=1;
-                });
-            }catch(err){
-                console.log("Can't connect to server!");
-                client.destroy();
+            if(f==0){
+                try{
+                    client.connect(5000, '192.168.10.250', function() {
+                        console.log('Connected');
+                        f=1;
+                    });
+                }catch(err){
+                    console.log("Can't connect to server!");
+                    client.destroy();
+                }
             }
         }
 
@@ -232,7 +233,7 @@ export default {
 
         client.on('timeout', function(){
             console.log('Client timeout!');
-            client.destroy();
+            // client.destroy();
         });
 
         client.on('close', function() {

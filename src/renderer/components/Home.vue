@@ -173,7 +173,7 @@ export default {
         function connect_(){
           // Server IP and Port configuration
           f=0;
-          while(1){
+          // while(1){
             try{
                 client.connect(5000, '192.168.10.250', function() {
                     console.log('Connected');
@@ -182,12 +182,12 @@ export default {
             }catch(err){
                 console.log("Can't connect to server!");
             }
-            if(f==1){
-                break;
-            }
+            // if(f==1){
+            //     break;
+            // }
             // Delay
             // setTimeout(function(){}, 500); 
-          }
+          // }
         }
 
         // Send data every second

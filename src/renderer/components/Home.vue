@@ -224,20 +224,20 @@ export default {
             }
         }, 1000);
 
+        // Add timeout if there is no live connection
+        n++;
+        if(n>=5){
+            n=0;
+            //Close the connection
+            client.destroy();
+        }
+
         client.on('error', function(err){
             console.log('There is an error in net socket!');
             console.log(err.toString());
             client.destroy();
             f=0;
         });
-
-        // Add timeout if there is no live connection
-        n++;
-        if(n>=1000000){
-            n=0;
-            //Close the connection
-            client.destroy();
-        }
 
         client.on('data', function(data) {
           console.log('Received: ' + data);

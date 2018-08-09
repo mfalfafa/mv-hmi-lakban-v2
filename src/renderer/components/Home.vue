@@ -199,8 +199,8 @@ export default {
 
         // Send data every second (if connected to the server)
         // If not connect to the server, then there is no delay time
-        if(f==1){
             setInterval(function send_(){
+                if(f==1){
                 // console.log(lines_);
                 var all_data=''
                 for (var k in lines_) {
@@ -215,8 +215,8 @@ export default {
                     // Trying to reconnect
                     // connect_();
                 }
+                }
             }, 1000);
-        }
 
         client.on('error', function(err){
             console.log('There is an error in net socket!');

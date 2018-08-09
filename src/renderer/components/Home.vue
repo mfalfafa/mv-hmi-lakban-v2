@@ -172,9 +172,8 @@ export default {
         var f=0; 
 
         function connect_(){
-          // Server IP and Port configuration
-          f=0;
-          // while(1){
+            // Server IP and Port configuration
+            f=0;
             try{
                 client.connect(5000, '192.168.10.250', function() {
                     console.log('Connected');
@@ -184,20 +183,24 @@ export default {
                 console.log("Can't connect to server!");
                 client.destroy();
             }
-            // if(f==1){
-            //     break;
-            // }
-            // Delay
-            // setTimeout(function(){}, 500); 
-          // }
         }
 
-        // Send data every second
-        setInterval(function send_(){
-          if(f==1){
-               // console.log(lines_);
-               var all_data=''
-               for (var k in lines_) {
+        if(first_run==0){
+            // Connect for the first time to server
+            connect_();
+            first_run=1;
+        }else if((first_run==1) && (f==0)){
+            // Trying to reconnect if not connected to server
+            connect_();
+        }
+
+        // Send data every second (if connected to the server)
+        // If not connect to the server, then there is no delay time
+        if(f==1){
+            setInterval(function send_(){
+                // console.log(lines_);
+                var all_data=''
+                for (var k in lines_) {
                     all_data=all_data + '@'+ lines_[k].label.toString() +'@'+ lines_[k].counter.toString() + '@' 
                 }
                 try{
@@ -209,13 +212,9 @@ export default {
                     // Trying to reconnect
                     connect_();
                 }
-          }
-        }, 1000);
-
-        if(first_run==0){
-            connect_();
-            first_run=1;
+            }, 1000);
         }
+
 
         client.on('data', function(data) {
           console.log('Received: ' + data);

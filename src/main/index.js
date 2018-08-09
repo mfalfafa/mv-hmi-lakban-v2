@@ -90,7 +90,7 @@ interrupt_pin.watch(function (err, value) {
       mainWindow.webContents.send('sendlakban',{counter:1});
       console.log('Data is received.');
     }catch(err){
-      console.log("Error in receiving data!");
+      console.log("Error in receiving data!")
     }
     // console.log('count '+ val);
     // To stop watch to the sensor pin

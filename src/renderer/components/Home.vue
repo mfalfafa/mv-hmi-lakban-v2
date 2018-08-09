@@ -185,6 +185,7 @@ export default {
                 }catch(err){
                     console.log("Can't connect to server!");
                     client.destroy();
+                    connect_();
                     f=0;
                 }
             }
@@ -215,12 +216,14 @@ export default {
                     console.log("Error while sending datalakban!");
                     client.destroy();
                     f=0;
+                    connect_();
                     // Trying to reconnect
                     // connect_();
                 }
             }else if(f==0){
                 console.log("Client is not connected!!!");
                 client.destroy();
+                connect_();
             }
         }, 1000);
 
@@ -232,6 +235,7 @@ export default {
             n=0;
             //Close the connection
             client.destroy();
+            connect_();
         }
 
         client.on('error', function(err){
@@ -239,6 +243,7 @@ export default {
             console.log(err.toString());
             client.destroy();
             f=0;
+            connect_();
         });
 
         client.on('data', function(data) {
@@ -254,6 +259,7 @@ export default {
                 client.destroy();
             }
             f=0;
+            connect_();
           }
         });
 

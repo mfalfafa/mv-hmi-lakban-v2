@@ -219,6 +219,7 @@ export default {
                 }
             }else if(f==0){
                 console.log("Client is not connected!!!");
+                client.destroy();
             }
         }, 1000);
 
